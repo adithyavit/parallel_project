@@ -1,0 +1,7 @@
+step1:
+g++ -o test_1 test_1.cpp `pkg-config opencv --cflags --libs`
+
+step2:
+sudo ldconfig
+
+step3 ./try123 adithya.jpg
