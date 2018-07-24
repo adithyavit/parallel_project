@@ -21,8 +21,7 @@ avg0 = (int)(sum0/FILTER_SIZE^2);
 return avg0;
 }
 */
-int main( int argc, char** argv )
-{   
+int main( int argc, char** argv ){ 
     clock_t t1,t2;
     t1=clock();
     if( argc != 2)
@@ -33,7 +32,6 @@ int main( int argc, char** argv )
     Mat image;
     image = imread(argv[1], CV_LOAD_IMAGE_COLOR);
     //Mat gray;
-    
     //cvtColor(image, gray, CV_BGR2GRAY);
     if(! image.data )
     {
@@ -71,8 +69,7 @@ int main( int argc, char** argv )
             //img.at<cv::Vec3b>(i, j)[2] = (int)((image.at<cv::Vec3b>(i, j+1)[2] + image.at<cv::Vec3b>(i+1, j+1)[2]+image.at<cv::Vec3b>(i-1, j)[2]+image.at<cv::Vec3b>(i, j)[2]+image.at<cv::Vec3b>(i+1, j)[2]+image.at<cv::Vec3b>(i-1, j-1)[2]+image.at<cv::Vec3b>(i, j-1)[2]+image.at<cv::Vec3b>(i+1, j-1)[2]+image.at<cv::Vec3b>(i-1, j+1)[2])/9);
         //i-FILTER_SIZE+3;        
         for(k = i-FILTER_SIZE/2;k<=i+FILTER_SIZE/2;k++){
-        for(l = j-FILTER_SIZE/2;l<=j+FILTER_SIZE/2;l++){
-                
+        for(l = j-FILTER_SIZE/2;l<=j+FILTER_SIZE/2;l++){        
         sum0 = sum0+image.at<cv::Vec3b>(k, l)[0];
         sum1 = sum1+image.at<cv::Vec3b>(k, l)[1];
         sum2 = sum2+image.at<cv::Vec3b>(k, l)[2];
@@ -80,11 +77,9 @@ int main( int argc, char** argv )
         }
         img.at<cv::Vec3b>(i, j)[0] = (int)(sum0/pow(FILTER_SIZE,2));
         img.at<cv::Vec3b>(i, j)[1] = (int)(sum1/pow(FILTER_SIZE,2));
-        img.at<cv::Vec3b>(i, j)[2] = (int)(sum2/pow(FILTER_SIZE,2));
-        
+        img.at<cv::Vec3b>(i, j)[2] = (int)(sum2/pow(FILTER_SIZE,2));   
 }
         }
-    
     t2 = clock();
     float diff ((float(t2)-float(t1))/CLOCKS_PER_SEC);
     cout<<"time taken is: "<<diff<<" seconds"<<endl;
