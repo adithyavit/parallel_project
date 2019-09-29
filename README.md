@@ -1,27 +1,27 @@
 # parallel_project
-# ABSTRACT:
+## ABSTRACT:
 Implementation of noise reduction with adaptive filters.
-# Language used:
+## Language used:
 C++
-# Library used:
+## Library used:
 OPENCV
-# OBJECTIVE:
+## OBJECTIVE:
 Implementation of median filter with adaptive de-noising.
 Euclidian, fuzzy and Canberra metrics are used to detect noise.
-# Experiment:
+## Experiment:
 An image was selected and noise was manually added to it using
 matlab.
 Using c++ program we wrote a function that detects noise in the
 algorithm and adds it to an array.
 Then the pixels in this array is iterated through and mean filter is
 applied on those specific pixels.
-# Euclidian metric:
+## Euclidian metric:
 ![](images/euclidean_metric.png)
 
-# Fuzzy metric:
+## Fuzzy metric:
 ![](images/fuzzy_metric.png)
 
-# Canberra metric:
+## Canberra metric:
 ![](images/fuzzy_metric.png)
 
 Using one of the above metric we find the distance between two
@@ -38,7 +38,7 @@ We have implemented code Euclidian and fuzzy metrics by
 reference from previous papers and Canberra metric is a new
 implementation.
 
-# Parallelization:
+## Parallelization:
 We have used multi-processing to parallelize both noise detection
 and noise removal algorithms.
 Openmp is used to implement multi-processing, it is an
@@ -47,7 +47,7 @@ implementation of multi-threading.
 In the papers we referred the implementation was done using GPU,
 whereas we have implemented the algorithms using Openmp.
 
-# Output:
+## Output:
 Original image:
 ![](images/Original_image.png)
 
@@ -99,11 +99,11 @@ mse:
 psnr ratio
 ![](images/psnr_ratio.png)
 
-# Conclusion:
+## Conclusion:
 Fuzzy metric performed better in noise reduction whereas the Euclidian metric was faster. The metric Canberra we used gave results faster than fuzzy metric and error less than Euclidian metric.
 But fuzzy had a problem of leaving few white pixels unidentified and Canberra was ineffective with contrasting colours. So taking all these parameters into account, we can conclude that Euclidian metric is best for most cases.
 
-# References:
+## References:
 
 1. http://www.sciencedirect.com/science/article/pii/S1877050913005723
 
