@@ -16,7 +16,7 @@ algorithm and adds it to an array.
 Then the pixels in this array is iterated through and mean filter is
 applied on those specific pixels.
 # Euclidian metric:
-![](images/euclidean_metric)
+![](images/euclidean_metric.png)
 
 # Fuzzy metric:
 ![](images/fuzzy_metric)
